@@ -38,3 +38,9 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
