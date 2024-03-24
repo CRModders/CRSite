@@ -1,0 +1,39 @@
+.main {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #404040;
+  color: white;
+  min-height: 100%;
+}
+
+.container {
+}
+
+.container h1 {
+  font-family: Arial;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.container nav {
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  text-align: center;
+}
+
+.container nav a {
+  margin: 5px;
+}
+
+footer {
+  background-color: lightgrey;
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
