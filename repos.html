@@ -1,11 +1,28 @@
 <h2>Repositories</h2>
 <hr>
-<div id="repos"></div>
+<h3>GitHub</h3>
+<div id="gh-repos"></div>
+<h3>Codeberg</h3>
+<div id="cb-repos"></div>
 <script type="text/javascript">
   fetch("https://api.github.com/orgs/CRModders/repos")
     .then(response => response.json())
     .then(data => {
-      let repos = document.getElementById("repos");
+      let repos = document.getElementById("gh-repos");
+      data.forEach(repo => {
+        let repoDiv = document.createElement("div");
+        repoDiv.className = "repo";
+        repos.appendChild(repoDiv);
+        let repoName = document.createElement("a");
+        repoName.href = repo.html_url;
+        repoName.textContent = repo.name;
+        repoDiv.appendChild(repoName);
+      });
+    });
+  fetch("https://codeberg.org/api/v1/orgs/CRModders/repos")
+    .then(response => response.json())
+    .then(data => {
+      let repos = document.getElementById("cb-repos");
       data.forEach(repo => {
         let repoDiv = document.createElement("div");
         repoDiv.className = "repo";
