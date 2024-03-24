@@ -7,11 +7,12 @@
     <title>CRModders</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="/css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="/js/index.js"></script>
   </head>
   <body>
     <div class="container">
       <h1>CRModders</h1>
-      <nav>
+      <nav id="nav-links">
         <a href="/github">
           <img class="nav-img" src="images/github.svg"/>
         </a>
@@ -25,7 +26,13 @@
           <img class="nav-img" src="images/trello.svg"/>
         </a>
       </nav>
+      <nav id="nav-page">
+        <div class="nav-link"><a href="#about">about</a></div>
+        <div class="nav-link"><a href="#repos">repos</a></div>
+        <div class="nav-link"><a href="#people">people</a></div>
+      </nav>
+      <div id="content"></div>
+      <footer>This page is not affiliated with Cosmic Reach or FinalForEach.</footer>
     </div>
-    <footer>This page is not affiliated with Cosmic Reach or FinalForEach.</footer>
   </body>
 </html>
