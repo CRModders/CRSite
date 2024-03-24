@@ -1,7 +1,10 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
   min-height: 100vh;
   background: rgb(103,16,18);
   background: linear-gradient(0deg, rgba(103,16,18,1) 0%, rgba(191,31,34,1) 100%);
