@@ -23,6 +23,12 @@ body {
 
 .container nav a {
   margin: 5px;
+  text-decoration: none;
+}
+
+.nav-img {
+  width: 50px;
+  filter: invert(1);
 }
 
 footer {
