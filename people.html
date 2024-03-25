@@ -16,6 +16,7 @@
         let personName = document.createElement("a");
         personName.href = person.html_url;
         personName.textContent = person.login;
+        personName.target = "_blank";
         personDiv.appendChild(personName);
       });
     });

@@ -16,6 +16,7 @@
         let repoName = document.createElement("a");
         repoName.href = repo.html_url;
         repoName.textContent = repo.name;
+        repoName.target = "_blank";
         repoDiv.appendChild(repoName);
       });
     });
@@ -30,6 +31,7 @@
         let repoName = document.createElement("a");
         repoName.href = repo.html_url;
         repoName.textContent = repo.name;
+        repoName.target = "_blank";
         repoDiv.appendChild(repoName);
       });
     });
