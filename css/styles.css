@@ -6,8 +6,8 @@ html, body {
 
 body {
   min-height: 100vh;
-  background: rgb(103,16,18);
-  background: linear-gradient(0deg, rgba(103,16,18,1) 0%, rgba(191,31,34,1) 100%);
+  background: rgb(78, 12, 13);
+  background: linear-gradient(40deg, rgb(100, 10, 10) 0%, rgb(150, 30, 30) 100%);
   color: white;
   font-family: Arial;
 }
@@ -22,13 +22,23 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: width 0.5s ease-in-out;
 }
 
 .container h1 {
   font-family: Arial;
 }
 
+#nav-links {
+  position: absolute;
+  top: calc(100% - 7.5vh);
+  display: flex;
+  justify-content: space-around;
+  width: 10%;
+}
+
 #nav-links a {
+  position: relative;
   margin: 5px;
   text-decoration: none;
 }
@@ -102,8 +112,8 @@ hr {
 }
 
 footer {
-  margin: 4rem auto;
-  bottom: 5px;
+  position: absolute;
+  top: calc(100% - 2.5vh);
   width: 100%;
   text-align: center;
 }
