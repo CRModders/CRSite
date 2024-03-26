@@ -1,9 +1,9 @@
 <h2>Repositories</h2>
 <hr>
 <h3>GitHub</h3>
-<div id="gh-repos"></div>
+<div id="gh-repos" class="flex-list"></div>
 <h3>Codeberg</h3>
-<div id="cb-repos"></div>
+<div id="cb-repos" class="flex-list"></div>
 <script type="text/javascript">
   fetch("https://api.github.com/orgs/CRModders/repos")
     .then(response => response.json())

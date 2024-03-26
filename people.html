@@ -1,15 +1,18 @@
-<h2>People</h2>
+<h2>Members</h2>
 <hr>
-<div id="people"></div>
+<div id="members" class="flex-list"></div>
+<h2>Top Contributors</h2>
+<hr>
+<div id="contributors" class="flex-list"></div>
 <script type="text/javascript">
   fetch("https://api.github.com/orgs/CRModders/members")
     .then(response => response.json())
     .then(data => {
-      let people = document.getElementById("people");
+      let members = document.getElementById("members");
       data.forEach(person => {
         let personDiv = document.createElement("div");
         personDiv.className = "person";
-        people.appendChild(personDiv);
+        members.appendChild(personDiv);
         let personImg = document.createElement("img");
         personImg.src = person.avatar_url;
         personDiv.appendChild(personImg);
@@ -18,6 +21,45 @@
         personName.textContent = person.login;
         personName.target = "_blank";
         personDiv.appendChild(personName);
+      });
+    });
+  
+  let contributors = {};
+  fetch("https://api.github.com/orgs/CRModders/repos")
+    .then(response => response.json())
+    .then(async (data) => {
+      for (let repo of data) {
+        // We must skip forks to get only relevant contributors
+        if (repo.fork) continue;
+        const contributorsUrl = repo.contributors_url;
+        const contribsData = await fetch(contributorsUrl).then(response => response.json());
+        for (let contributor of contribsData) {
+          if (contributors[contributor.login]) {
+            contributors[contributor.login].contributions += contributor.contributions;
+          } else {
+            contributors[contributor.login] = {
+              contributions: contributor.contributions,
+              url: contributor.html_url,
+              avatar_url: contributor.avatar_url
+            }
+          }
+        }
+      }
+
+      let sortedContributors = Object.entries(contributors).sort((a, b) => b[1].contributions - a[1].contributions);
+      let topContributors = sortedContributors.slice(0, 10);
+      let contributorsDiv = document.getElementById("contributors");
+      topContributors.forEach(contributor => {
+        let contributorDiv = document.createElement("div");
+        contributorDiv.className = "person";
+        contributorsDiv.appendChild(contributorDiv);
+        let contributorImg = document.createElement("img");
+        contributorImg.src = contributor[1].avatar_url;
+        contributorDiv.appendChild(contributorImg);
+        let contributorName = document.createElement("a");
+        contributorName.href = contributor[1].url;
+        contributorName.textContent = contributor[0];
+        contributorDiv.appendChild(contributorName);
       });
     });
 </script>

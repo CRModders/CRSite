@@ -74,7 +74,7 @@ hr {
   width: 100%;
 }
 
-#people, #repos {
+.flex-list {
   display: flex;
   flex-direction: column;
 }
