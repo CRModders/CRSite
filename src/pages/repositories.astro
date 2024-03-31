@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+---
+
+<Layout title="Repositories" description="A list of all of our repos">
+	<h2>Repositories</h2>
+	<hr>
+	<h3>GitHub</h3>
+	<div id="gh-repos">
+
+	</div>
+	
+	<h3>Codeberg</h3>
+	<div id="cb-repos">
+
+	</div>
+
+	<script>
+  		fetch("https://api.github.com/orgs/CRModders/repos")
+    		.then(response => response.json())
+    		.then(data => {
+    	  		let repos = document.getElementById("gh-repos");
+    	  		data.forEach(repo => {
+    	    		let repoDiv = document.createElement("div");
+    	    		repoDiv.className = "repo";
+    	    		repos.appendChild(repoDiv);
+    	    		let repoName = document.createElement("a");
+    	    		repoName.href = repo.html_url;
+    	    		repoName.textContent = repo.name;
+    	    		repoName.target = "_blank";
+    	    		repoDiv.appendChild(repoName);
+    	  		});
+    		});
+  		fetch("https://codeberg.org/api/v1/orgs/CRModders/repos")
+    		.then(response => response.json())
+    		.then(data => {
+    	  		let repos = document.getElementById("cb-repos");
+    	  		data.forEach(repo => {
+    	    		let repoDiv = document.createElement("div");
+    	    		repoDiv.className = "repo";
+    	    		repos.appendChild(repoDiv);
+    	    		let repoName = document.createElement("a");
+    	    		repoName.href = repo.html_url;
+    	    		repoName.textContent = repo.name;
+    	    		repoName.target = "_blank";
+    	    		repoDiv.appendChild(repoName);
+    	  		});
+    		});
+	</script>
+</Layout>

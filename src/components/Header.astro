@@ -1,0 +1,29 @@
+---
+import Social from "../components/SocialLink.astro";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<h1>CRModders</h1>
+<nav id="nav-links">
+    <Social platform="github" username="CRModders" />
+    <Social platform="codeberg" username="CRModders" />
+    <Social platform="discord" username="45CuhYkv3B" />
+    <Social platform="trello" username="cosmicmodders" />
+</nav>
+
+<nav id="nav-page">
+    <HeaderLink href="/">about</HeaderLink>
+    <HeaderLink href="/repositories">repos</HeaderLink>
+    <HeaderLink href="/people">people</HeaderLink>
+</nav>
+
+<style>
+#nav-page {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    border-radius: 0.8rem;
+    background: rgb(103,16,18);
+    background: linear-gradient(45deg, rgba(103,16,18,1) 0%, rgba(105,11,12,1) 100%);
+}
+</style>
