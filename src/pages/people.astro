@@ -13,7 +13,7 @@ import Layout from '../layouts/BaseLayout.astro';
 		fetch("https://api.github.com/orgs/CRModders/members")
     		.then(response => response.json())
     		.then(data => {
-    	  		let people = !document.getElementById("people");
+    	  		let people = document.getElementById("people");
     	  		data.forEach(person => {
     	    		let personDiv = document.createElement("div");
     	    	personDiv.className = "person";
