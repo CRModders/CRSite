@@ -7,4 +7,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon(), mdx(), sitemap()],
+
+  site: "https://crmodders.github.io",
+  base: "CRSite",
 });
