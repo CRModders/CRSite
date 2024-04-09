@@ -47,27 +47,45 @@ hr {
 }
 
 #nav-page {
-  display: flex;
-  justify-content: center;
+  display: block;
+  text-align: center;
   margin: 1rem 0;
+  width: calc(4rem * 3);
   border-radius: 0.8rem;
   background: rgb(103,16,18);
   background: linear-gradient(45deg, rgba(103,16,18,1) 0%, rgba(105,11,12,1) 100%);
 }
 
+#nav-page-inner {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-pointer {
+  z-index: 1;
+  position: absolute;
+  height: 1.8rem;
+  border-radius: 0.8rem;
+  transition: transform 0.25s ease-in-out;
+  will-change: transform;
+  width: 4rem;
+  background-color: rgb(191,31,34);
+}
+
 .nav-link {
-  height: 1.2rem;
-  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.8rem;
+  width: 4rem;
   border-radius: 0.8rem;
 }
 
 .nav-link a {
   text-decoration: none;
   color: white;
-}
-
-.nav-link.active {
-  background-color: rgb(191,31,34);
 }
 
 #content {
