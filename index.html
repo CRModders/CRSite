@@ -1,38 +1,105 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="color-scheme" content="dark light">
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="main.js" defer></script>
     <title>CRModders</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="/css/styles.css" rel="stylesheet" type="text/css" media="all">
-    <script type="text/javascript" src="/js/index.js"></script>
-  </head>
-  <body>
+</head>
+
+<body class="full-height">
     <div class="container">
-      <h1>CRModders</h1>
-      <nav id="nav-links">
-        <a href="/github" target="_blank">
-          <img class="nav-img" src="images/github.svg"/>
-        </a>
-        <a href="/codeberg" target="_blank">
-          <img class="nav-img" src="images/codeberg.svg"/>
-        </a>
-        <a href="/discord" target="_blank">
-          <img class="nav-img" src="images/discord.svg"/>
-        </a>
-        <a href="/trello" target="_blank">
-          <img class="nav-img" src="images/trello.svg"/>
-        </a>
-      </nav>
-      <nav id="nav-page">
-        <div class="nav-link"><a href="#about">about</a></div>
-        <div class="nav-link"><a href="#repos">repos</a></div>
-        <div class="nav-link"><a href="#people">people</a></div>
-      </nav>
-      <div id="content"></div>
-      <footer>This page is not affiliated with Cosmic Reach or FinalForEach.</footer>
+        <main>
+            <header class="page-header">
+                <div class="nav-wrapper">
+                    <a href="/" class="heading-wrapper">
+                        <img src="https://raw.githubusercontent.com/CRModders/.github/main/profile/crmodders.png"
+                            width="48" height="48" alt="CRModders icon" class="heading-icon">
+                        <h1 class="heading">CRModders</h1>
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/CRModders" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://codeberg.org/CRModders" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12 12 12 0 0 0-.045 0zm.375 6.467l4.416 16.553a12 12 0 0 0 5.137-4.213z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://discord.gg/45CuhYkv3B" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"
+                            id="discord-icon">
+                            <path
+                                d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://trello.com/w/cosmicmodders" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"
+                            id="trello-icon">
+                            <path
+                                d="M14.1 0H1.903C.852 0 .002.85 0 1.9v12.19A1.902 1.902 0 0 0 1.902 16h12.199A1.902 1.902 0 0 0 16 14.09V1.9A1.902 1.902 0 0 0 14.1 0ZM7 11.367a.636.636 0 0 1-.64.633H3.593a.633.633 0 0 1-.63-.633V3.583c0-.348.281-.631.63-.633h2.765c.35.002.632.284.633.633L7 11.367Zm6.052-3.5a.633.633 0 0 1-.64.633h-2.78A.636.636 0 0 1 9 7.867V3.583a.636.636 0 0 1 .633-.633h2.778c.35.002.631.285.631.633l.01 4.284Z" />
+                        </svg>
+                    </a>
+                </div>
+            </header>
+        </main>
+
+        <section class="full-height about">
+            <h2>Cosmic Modders</h2>
+            <p>A group of modders with the goal of unifying Cosmic Reach modding.</p>
+        </section>
+
+        <section class="full-height repos">
+            <div class="title">
+                <h2>Repositories</h2>
+                <span>List of all the repositories under <strong>CRModders</strong> organisation</span>
+            </div>
+
+            <div class="repo-item-list gh-repos">
+                <span class="list-label">GitHub</span>
+                <span></span>
+
+            </div>
+
+            <div class="repo-item-list cb-repos">
+                <span class="list-label">Codeberg</span>
+                <span></span>
+
+            </div>
+
+        </section>
+
+        <section class="people">
+            <div class="title">
+                <h2>People</h2>
+                <span>This only includes people who have set their membership as public on GitHub.</span>
+            </div>
+
+            <div class="people-list">
+
+            </div>
+        </section>
     </div>
-  </body>
+
+</body>
+<footer>
+    <p>
+        This page is not affiliated with Cosmic Reach or FinalForEach.
+    </p>
+</footer>
+
+</body>
+
 </html>
