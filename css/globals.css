@@ -110,11 +110,8 @@ video {
 
 .full-height {
     min-height: 100vh;
-    min-height: 100dvh;
     min-height: min(100vh, 67rem);
-    min-height: min(100dvh, 67rem);
     min-height: clamp(45rem, 100vh, 67rem);
-    min-height: clamp(45rem, 100dvh, 67rem);
 }
 
 .container {
